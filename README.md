@@ -36,8 +36,11 @@ $ sudo apt-get install krb5-config libkrb5-dev libssl-dev libsasl2-dev libsasl2-
 ```sh
 $ source .venv/bin/activate
 $ export DJANGO_SETTINGS_MODULE=grpc_book_service_backend.settings.local
-$ python manage.py build -a grpc_book_service
-$ python manage.py build -p # generate protobuf
+
+# Internal Tools
+$ python manage.py build -a grpc_book_service # generate build files
+$ python manage.py build -p grpc_book_service # generate protobuf
+
 $ python manage.py makemigrations
 $ python manage.py migrate
 ```

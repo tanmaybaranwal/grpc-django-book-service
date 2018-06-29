@@ -110,3 +110,6 @@ The project also has helper modules from following repos, packages and blogs:
 
 - https://pypi.org/project/grpc-django/
 - http://flagzeta.org/blog/using-grpc-with-django/
+- https://github.com/grpc-ecosystem/grpc-gateway
+- https://github.com/RussellLuo/grpc-pytools
+- https://grpc.io/docs/quickstart/python.html

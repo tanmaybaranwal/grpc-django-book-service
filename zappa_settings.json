@@ -1,0 +1,14 @@
+{
+  "alpha": {
+    "project_name": "grpc-book-service-backend",
+    "s3_bucket": "grpc-book-service-backend-code-bucket",
+    "memory_size": 1536,
+    "api_name": "grpc-book-service-backend",
+    "timeout_seconds": 300,
+    "aws_region": "ap-south-1",
+    "keep_warm": false,
+    "domain": "grpc-book-service-backend-alpha.apigateway.in",
+    "certificate_arn": "",
+    "django_settings": "grpc_book_service_backend.settings.alpha"
+  }
+}

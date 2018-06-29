@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+package grpc_protos;
+
+
+message Publication {
+    string name = 1;
+    string email = 2;
+};
+
+message Book {
+    int64 isbn = 1;
+    string name = 2;
+    string author = 3;
+    string title = 4;
+    enum BookTypeEnum {
+        PAPER_BACK = 0;
+        HARD_BIND = 1;
+        ONLINE = 2;
+
+    }
+    BookTypeEnum book_type = 5;
+    repeated double codes = 6 [packed = true];
+    string metadata_ref = 7;
+    Publication publication = 8;
+};
+
+message QueryBooksRequest {
+    int64 author_prefix = 1;
+};
+
+message GetBookRequest {
+    int64 isbn = 1;
+};
+
+
+service GRPCBookService {
+    rpc QueryBooksPost (QueryBooksRequest) returns (stream Book) {
+
+    }
+    rpc GetBookPost (GetBookRequest) returns (Book) {
+
+    }
+}

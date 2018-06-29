@@ -1,0 +1,158 @@
+{
+    "swagger": "2.0",
+    "host": "127.0.0.1:8000",
+    "basePath": "/api/grpc_book_service/",
+    "info": {
+        "version": "1.0.0",
+        "title": "Simple API",
+        "description": "A simple API for books"
+    },
+    "schemes": [
+        "http"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "oauth": {
+            "tokenUrl": "http://auth.books-app-demo.com/oauth2/",
+            "flow": "password",
+            "scopes": {
+                "read": "read users",
+                "write": "create users",
+                "update": "update users",
+                "delete": "delete users"
+            },
+            "type": "oauth2"
+        }
+    },
+    "security": [],
+    "definitions": {
+        "Book": {
+            "type": "object",
+            "properties": {
+                "isbn": {
+                    "type": "integer"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "author": {
+                    "type": "string"
+                },
+                "book_type": {
+                    "type": "string",
+                    "enum": [
+                        "PAPER_BACK",
+                        "HARD_BIND",
+                        "ONLINE"
+                    ]
+                },
+                "metadata_ref": {
+                    "type": "string"
+                },
+                "publication": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string"
+                        },
+                        "email": {
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "isbn",
+                "author"
+            ]
+        }
+    },
+    "parameters": {
+        "GetBookRequest": {
+            "description": "GetBookRequest",
+            "in": "body",
+            "name": "GetBookRequest",
+            "required": true,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "isbn": {
+                        "type": "integer"
+                    }
+                }
+            }
+        },
+        "QueryBooksRequest": {
+            "description": "QueryBooksRequest",
+            "in": "body",
+            "name": "QueryBooksRequest",
+            "required": true,
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "author_prefix": {
+                        "type": "integer"
+                    }
+                }
+            }
+        }
+    },
+    "responses": {
+        "GetBookResponse": {
+            "description": "book response",
+            "schema": {
+                "$ref": "#/definitions/Book"
+            }
+        },
+        "QueryBooksResponse": {
+            "description": "stream book response",
+            "schema": {
+                "$ref": "#/definitions/Book"
+            }
+        }
+    },
+    "paths": {
+        "/book/get/": {
+            "post": {
+                "summary": "get books",
+                "operationId": "get_book",
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/GetBookRequest"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/responses/GetBookResponse"
+                    }
+                }
+            }
+        },
+        "/book/query/": {
+            "post": {
+                "summary": "query books",
+                "operationId": "query_books",
+                "x-requestStream": false,
+                "x-responseStream": true,
+                "parameters": [
+                    {
+                        "$ref": "#/parameters/QueryBooksRequest"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "$ref": "#/responses/QueryBooksResponse"
+                    }
+                }
+            }
+        }
+    }
+}

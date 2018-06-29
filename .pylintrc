@@ -1,0 +1,30 @@
+[MESSAGES CONTROL]
+
+# Enable the message, report, category or checker with the given id(s). You can
+# either give multiple identifier separated by comma (,) or put this option
+# multiple time.
+#enable=
+
+# Disable the message, report, category or checker with the given id(s). You
+# can either give multiple identifier separated by comma (,) or put this option
+# multiple time (only on the command line, not in the configuration file where
+# it should appear only once).
+# R0903 -- Too few public methods
+# R0913 -- Too many arguments
+# W1111 -- Assigning to function call which only returns None
+# C0111 -- missing-docstring
+# W0613 -- unused-argument
+# R0801 -- duplicate-code
+# W0511 -- fixme code
+
+disable=R0903,R0913,W1111,C0111,W0613,R0801,W0511
+
+# Maximum number of characters on a single line.
+max-line-length=79
+
+# Maximum number of locals for function / method body
+max-locals=35
+
+[DESIGN]
+max-parents=15
+

@@ -1,0 +1,162 @@
+{
+  "name": "grpc_book_service/grpc_protos/app.proto", 
+  "package": "grpc_protos", 
+  "messages": [
+    {
+      "fields": [
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_STRING", 
+          "number": 1, 
+          "name": "name"
+        }, 
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_STRING", 
+          "number": 2, 
+          "name": "email"
+        }
+      ], 
+      "nested_messages": [], 
+      "name": "Publication", 
+      "nested_enums": [], 
+      "path": ".grpc_protos"
+    }, 
+    {
+      "fields": [
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_INT64", 
+          "number": 1, 
+          "name": "isbn"
+        }, 
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_STRING", 
+          "number": 2, 
+          "name": "name"
+        }, 
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_STRING", 
+          "number": 3, 
+          "name": "author"
+        }, 
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_STRING", 
+          "number": 4, 
+          "name": "title"
+        }, 
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": ".grpc_protos.Book.BookTypeEnum", 
+          "type": "TYPE_ENUM", 
+          "number": 5, 
+          "name": "book_type"
+        }, 
+        {
+          "label": "LABEL_REPEATED", 
+          "type_name": "", 
+          "type": "TYPE_DOUBLE", 
+          "number": 6, 
+          "name": "codes"
+        }, 
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_STRING", 
+          "number": 7, 
+          "name": "metadata_ref"
+        }, 
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": ".grpc_protos.Publication", 
+          "type": "TYPE_MESSAGE", 
+          "number": 8, 
+          "name": "publication"
+        }
+      ], 
+      "nested_messages": [], 
+      "name": "Book", 
+      "nested_enums": [
+        ".grpc_protos.Book.BookTypeEnum"
+      ], 
+      "path": ".grpc_protos"
+    }, 
+    {
+      "fields": [
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_INT64", 
+          "number": 1, 
+          "name": "author_prefix"
+        }
+      ], 
+      "nested_messages": [], 
+      "name": "QueryBooksRequest", 
+      "nested_enums": [], 
+      "path": ".grpc_protos"
+    }, 
+    {
+      "fields": [
+        {
+          "label": "LABEL_OPTIONAL", 
+          "type_name": "", 
+          "type": "TYPE_INT64", 
+          "number": 1, 
+          "name": "isbn"
+        }
+      ], 
+      "nested_messages": [], 
+      "name": "GetBookRequest", 
+      "nested_enums": [], 
+      "path": ".grpc_protos"
+    }
+  ], 
+  "syntax": "proto3", 
+  "services": [
+    {
+      "methods": [
+        {
+          "output_type": ".grpc_protos.Book", 
+          "name": "QueryBooksPost", 
+          "input_type": ".grpc_protos.QueryBooksRequest"
+        }, 
+        {
+          "output_type": ".grpc_protos.Book", 
+          "name": "GetBookPost", 
+          "input_type": ".grpc_protos.GetBookRequest"
+        }
+      ], 
+      "name": "GRPCBookService"
+    }
+  ], 
+  "enums": [
+    {
+      "path": ".grpc_protos.Book", 
+      "values": [
+        {
+          "number": 0, 
+          "name": "PAPER_BACK"
+        }, 
+        {
+          "number": 1, 
+          "name": "HARD_BIND"
+        }, 
+        {
+          "number": 2, 
+          "name": "ONLINE"
+        }
+      ], 
+      "name": "BookTypeEnum"
+    }
+  ]
+}

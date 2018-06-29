@@ -60,13 +60,14 @@ $ python manage.py run_grpc_server grpc_book_service
 
 ## Running REST Server with gRPC:
 
+This is a way with golang http reverse proxy gateway mentioned at https://github.com/grpc-ecosystem/grpc-gateway
 ```sh
-
-# GoLang Gateway out: <https://github.com/grpc-ecosystem/grpc-gateway>
-# This is a way which I couldn't figure out.
+# GoLang Gateway out: 
 $ protoc -I/usr/local/include -I. -I./grpc_book_service/grpc_protos -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis --grpc-gateway_out=logtostderr=true:. ./grpc_book_service/grpc_protos/app.proto
+```
 
-# Another way using <https://github.com/RussellLuo/grpc-pytools/>
+Another way using https://github.com/RussellLuo/grpc-pytools/
+```sh
 
 # Generate AST File
 $ python -m grpc_tools.protoc -I. --pytools-ast_out=grpc_book_service/grpc_rest/app_ast.json grpc_book_service/grpc_protos/app.proto

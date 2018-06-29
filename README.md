@@ -1,4 +1,4 @@
-# grpc_book_service_backend
+# gRPC + Django Integration with RESTart: gRPC Book Service
 
 gRPC Integration with Django.
 

@@ -95,6 +95,6 @@ twython==3.4.0
 Unidecode==1.0.22
 urllib3==1.23
 wcwidth==0.1.7
-Werkzeug==0.14.1
+Werkzeug==0.15.3
 whichcraft==0.4.1
 wrapt==1.10.11

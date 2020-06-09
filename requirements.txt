@@ -75,7 +75,7 @@ python-dateutil==2.7.3
 Python-EasyConfig==0.1.6
 Python-RESTArt==0.1.5
 pytz==2018.4
-PyYAML==3.11
+PyYAML==5.1
 raven==6.2.1
 requests==2.19.1
 requests-kerberos==0.11.0

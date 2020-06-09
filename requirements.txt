@@ -93,7 +93,7 @@ termcolor==1.1.0
 traitlets==4.3.2
 twython==3.4.0
 Unidecode==1.0.22
-urllib3==1.23
+urllib3==1.24.2
 wcwidth==0.1.7
 Werkzeug==0.15.3
 whichcraft==0.4.1

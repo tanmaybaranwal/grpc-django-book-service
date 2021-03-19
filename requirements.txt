@@ -46,7 +46,7 @@ grpcio-tools==1.12.1
 idna==2.7
 ipython==5.7.0
 ipython-genutils==0.2.0
-Jinja2==2.10
+Jinja2==2.11.3
 jinja2-time==0.2.0
 jmespath==0.9.3
 jsonpatch==1.23

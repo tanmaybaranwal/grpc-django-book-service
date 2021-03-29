@@ -69,7 +69,7 @@ poyo==0.4.1
 prompt-toolkit==1.0.15
 protobuf==3.6.0
 ptyprocess==0.6.0
-Pygments==2.2.0
+Pygments==2.7.4
 pykerberos==1.2.1
 python-dateutil==2.7.3
 Python-EasyConfig==0.1.6

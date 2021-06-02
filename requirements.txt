@@ -54,7 +54,7 @@ jsonpointer==2.0
 jsonschema==2.6.0
 lazy-object-proxy==1.3.1
 lazyme==0.0.20
-markdown2==2.3.5
+markdown2==2.4.0
 MarkupSafe==1.0
 marshmallow==2.15.3
 mock==2.0.0

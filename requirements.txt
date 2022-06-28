@@ -1,6 +1,6 @@
 analytics-python==1.2.9
 appnope==0.1.0
-arrow==0.12.1
+arrow==0.15.1
 astroid==1.6.5
 backports.functools-lru-cache==1.5
 backports.shutil-get-terminal-size==1.0.0
